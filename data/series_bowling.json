@@ -1,0 +1,62 @@
+[
+  {
+    "PlayerName":"Thejus",
+    "Mat":3,
+    "Inns":6,
+    "Overs":28,
+    "Runs":64,
+    "Econ":2.29,
+    "Wkts":8,
+    "Avg":8.0,
+    "strike rate":21.0,
+    "BB":null
+  },
+  {
+    "PlayerName":"Arun",
+    "Mat":3,
+    "Inns":6,
+    "Overs":16,
+    "Runs":59,
+    "Econ":3.69,
+    "Wkts":8,
+    "Avg":7.38,
+    "strike rate":12.0,
+    "BB":null
+  },
+  {
+    "PlayerName":"Pranav",
+    "Mat":3,
+    "Inns":6,
+    "Overs":29,
+    "Runs":48,
+    "Econ":1.66,
+    "Wkts":7,
+    "Avg":6.86,
+    "strike rate":24.86,
+    "BB":null
+  },
+  {
+    "PlayerName":"Varun",
+    "Mat":3,
+    "Inns":6,
+    "Overs":19,
+    "Runs":31,
+    "Econ":1.63,
+    "Wkts":6,
+    "Avg":5.17,
+    "strike rate":19.0,
+    "BB":null
+  },
+  {
+    "PlayerName":"Sravan",
+    "Mat":2,
+    "Inns":4,
+    "Overs":23,
+    "Runs":45,
+    "Econ":1.96,
+    "Wkts":5,
+    "Avg":9.0,
+    "strike rate":27.6,
+    "BB":null
+  }
+]
