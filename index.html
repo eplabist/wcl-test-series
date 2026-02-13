@@ -126,6 +126,50 @@ body {
     overflow: hidden;
     perspective: 1500px;
 }
+.dashboard {
+    flex-direction: column;   /* stack vertically now */
+    padding-top: 40px;
+}
+
+.recent-match {
+    width: 100%;
+    max-width: 1200px;
+    background: linear-gradient(135deg, #ec3b83, #c2185b);
+    padding: 25px 35px;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    margin-bottom: 60px;
+}
+
+.recent-match h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.match-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.innings {
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.innings h3 {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.match-result {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+}
+    
 
 .carousel {
     position: relative;
@@ -274,6 +318,7 @@ th {
     .hero span {
         font-size: 24px;
     }
+}
     @media(max-width: 768px) {
     .ribbon-top,
     .ribbon-bottom {
@@ -281,14 +326,24 @@ th {
         background-size: contain;
         background-repeat: repeat-x;
     }
+}
 @media(max-width: 1000px) {
     .dashboard {
         grid-template-columns: 1fr;
     }
 }
-
-
+@media(max-width: 1000px) {
+    .match-container {
+        grid-template-columns: 1fr 1fr;
+    }
 }
+
+@media(max-width: 600px) {
+    .match-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 </style>
     
