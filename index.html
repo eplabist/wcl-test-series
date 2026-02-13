@@ -282,6 +282,29 @@ th {
 </style>
     
 </head>
+<script>
+const cards = document.querySelectorAll('.card');
+
+cards.forEach(card => {
+
+    card.addEventListener('mousemove', (e) => {
+
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const center = rect.width / 2;
+
+        const rotateY = ((x - center) / center) * 8;  // rotation strength
+
+        card.style.transform = `rotateY(${rotateY}deg)`;
+
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = "rotateY(0deg)";
+    });
+
+});
+</script>
 
 
 <body>
