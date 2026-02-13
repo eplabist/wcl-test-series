@@ -106,6 +106,9 @@ body {
     display: block;
 }
 
+.ribbon-bottom {
+    margin-top: 120px;
+}
 
 
 .ribbon-top {
@@ -185,8 +188,9 @@ body {
     position: relative;
     width: 100%;
     max-width: 1300px;
-    height: 600px;   /* increase slightly */
+    height: 700px;
     margin: 80px auto 0;
+    overflow: visible;   /* ensure no clipping */
 }
 
 
@@ -206,6 +210,9 @@ body {
     left: 50%;
 }
 
+.card {
+    top: 0;   /* anchor cards properly */
+}
 
 /* Center Card */
 .card.center {
