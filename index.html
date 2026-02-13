@@ -305,6 +305,51 @@ cards.forEach(card => {
 
 });
 </script>
+<script>
+const carousel = document.querySelector('.carousel');
+
+let startX = 0;
+
+function rotateRight() {
+    const last = carousel.lastElementChild;
+    carousel.insertBefore(last, carousel.firstElementChild);
+}
+
+function rotateLeft() {
+    const first = carousel.firstElementChild;
+    carousel.appendChild(first);
+}
+
+// Mouse drag
+carousel.addEventListener('mousedown', (e) => {
+    startX = e.clientX;
+});
+
+carousel.addEventListener('mouseup', (e) => {
+    let diff = e.clientX - startX;
+
+    if (diff > 50) {
+        rotateRight();
+    } else if (diff < -50) {
+        rotateLeft();
+    }
+});
+
+// Touch support
+carousel.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+});
+
+carousel.addEventListener('touchend', (e) => {
+    let diff = e.changedTouches[0].clientX - startX;
+
+    if (diff > 50) {
+        rotateRight();
+    } else if (diff < -50) {
+        rotateLeft();
+    }
+});
+</script>
 
 
 <body>
