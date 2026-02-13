@@ -37,6 +37,7 @@ body::before {
     background: rgba(58, 0, 95, 0.85);
     z-index: -1;
 }
+<div class="ribbon-top"></div>
 
 /* NAVBAR */
 
@@ -98,6 +99,25 @@ body::before {
     color: var(--pink);
     font-weight: 600;
 }
+<div class="ribbon-bottom"></div>
+
+
+    .ribbon-top,
+.ribbon-bottom {
+    width: 100%;
+    height: 70px;
+    background-size: cover;
+    background-position: center;
+}
+
+.ribbon-top {
+    background-image: url('ribbon-top.png');
+}
+
+.ribbon-bottom {
+    background-image: url('ribbon-bottom.png');
+}
+
 
 /* Responsive */
 
@@ -115,10 +135,19 @@ body::before {
     .hero span {
         font-size: 24px;
     }
+    @media(max-width: 768px) {
+    .ribbon-top,
+    .ribbon-bottom {
+        height: 45px;
+        background-size: contain;
+        background-repeat: repeat-x;
+    }
+
 
 }
 
 </style>
+    
 </head>
 
 <body>
