@@ -22,12 +22,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
-    background: url('icc-cricket-world-cup-2023-slide1.png') no-repeat center center/cover;
-    min-height: 90vh;
-    color: white;
-}
-
 /* Overlay for readability */
 html, body {
     margin: 0;
@@ -87,21 +81,23 @@ body {
 /* CENTER TITLE */
 
 .hero {
-    flex: 1;   /* THIS is the magic */
+    flex: 1;   /* takes remaining height automatically */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.hero h1 {
+    font-size: 70px;
+    font-weight: 700;
 }
 
 .hero span {
-    font-size: 30px;
+    font-size: 40px;
     color: var(--pink);
-    font-weight: 400;
+    font-weight: 600;
 }
-
 
 .ribbon-top,
 .ribbon-bottom {
