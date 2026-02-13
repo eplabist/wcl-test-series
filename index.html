@@ -128,22 +128,46 @@ body {
 }
 
 /* Card Styling */
-    .card {
-    background: rgba(0, 0, 0, 0.55);
+   .card {
+    background-color: #ec3b83;   /* Pure pink */
+    padding: 28px 30px;          /* More breathing space */
+    border-radius: 16px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+}
 
-    }
 
 .card h2 {
-    margin-bottom: 20px;
-    font-size: 22px;
-    color: var(--pink);
+    margin-bottom: 18px;
     text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+
 }
 
 /* List Style */
 .card ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
+
+.card li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+}
+.card li:not(:last-child) {
+    border-bottom: 1px solid rgba(255,255,255,0.6);
+}
+ .card li:hover {
+    background: rgba(255,255,255,0.1);
+    transition: 0.3s ease;
+    padding-left: 6px;
+}
+
 
 .player-info {
     display: flex;
@@ -162,12 +186,18 @@ body {
 
 
 .rank {
-    background: var(--pink);
-    padding: 4px 10px;
+    min-width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
+    background: white;
+    color: #ec3b83;
     font-weight: bold;
-    margin-right: 10px;
+    margin-right: 12px;
 }
+
 
 .stat {
     font-weight: 600;
