@@ -118,6 +118,69 @@ body {
 
 
 /* Responsive */
+.dashboard {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 25px;
+    padding: 40px;
+    align-items: center;
+}
+
+/* Card Styling */
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.card h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: var(--pink);
+    text-align: center;
+}
+
+/* List Style */
+.card ul {
+    list-style: none;
+}
+
+.card li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.rank {
+    background: var(--pink);
+    padding: 4px 10px;
+    border-radius: 50%;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.stat {
+    font-weight: 600;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background: rgba(255,255,255,0.1);
+}
 
 @media(max-width: 900px) {
 
@@ -140,8 +203,13 @@ body {
         background-size: contain;
         background-repeat: repeat-x;
     }
-
+@media(max-width: 1000px) {
+    .dashboard {
+        grid-template-columns: 1fr;
     }
+}
+
+
 }
 
 </style>
@@ -166,10 +234,46 @@ body {
     </div>
 </nav>
 
-<section class="hero">
-    <h1>WCL Test Series</h1>
-    <span>Official Tournament Stats</span>
+<section class="dashboard">
+
+    <!-- Top Batters -->
+    <div class="card">
+        <h2>Top 5 Batters</h2>
+        <ul>
+            <li><span class="rank">1</span> Player A <span class="stat">450 Runs</span></li>
+            <li><span class="rank">2</span> Player B <span class="stat">420 Runs</span></li>
+            <li><span class="rank">3</span> Player C <span class="stat">398 Runs</span></li>
+            <li><span class="rank">4</span> Player D <span class="stat">370 Runs</span></li>
+            <li><span class="rank">5</span> Player E <span class="stat">355 Runs</span></li>
+        </ul>
+    </div>
+<!-- Top Bowlers -->
+    <div class="card">
+        <h2>Top 5 Bowlers</h2>
+        <ul>
+            <li><span class="rank">1</span> Player X <span class="stat">18 Wkts</span></li>
+            <li><span class="rank">2</span> Player Y <span class="stat">15 Wkts</span></li>
+            <li><span class="rank">3</span> Player Z <span class="stat">14 Wkts</span></li>
+            <li><span class="rank">4</span> Player M <span class="stat">13 Wkts</span></li>
+            <li><span class="rank">5</span> Player N <span class="stat">12 Wkts</span></li>
+        </ul>
+    </div>
+    <!-- Points Table -->
+    <div class="card">
+        <h2>Team Points</h2>
+        <table>
+            <tr><th>Team</th><th>P</th><th>Pts</th></tr>
+            <tr><td>Team A</td><td>5</td><td>8</td></tr>
+            <tr><td>Team B</td><td>5</td><td>6</td></tr>
+            <tr><td>Team C</td><td>5</td><td>4</td></tr>
+            <tr><td>Team D</td><td>5</td><td>2</td></tr>
+        </table>
+    </div>
+
+    
+
 </section>
+
 <div class="ribbon-bottom"></div>
 </body>
 </html>
