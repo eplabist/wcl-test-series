@@ -32,7 +32,8 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
+    overflow-y: auto;
     background: url('icc-cricket-world-cup-2023-slide1.png') no-repeat center center/cover;
     color: white;
 }
@@ -130,6 +131,12 @@ body {
     flex-direction: column;   /* stack vertically now */
     padding-top: 40px;
 }
+.dashboard {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
 
 .recent-match {
     width: 100%;
@@ -139,6 +146,9 @@ body {
     border-radius: 18px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.4);
     margin-bottom: 60px;
+}
+.recent-match {
+    margin-top: 40px;   /* pushes it away from navbar */
 }
 
 .recent-match h2 {
@@ -178,6 +188,9 @@ body {
     height: 500px;
 }
 
+.carousel {
+    margin-top: 60px;
+}
 
 /* Card Styling */
   .card {
@@ -342,6 +355,11 @@ th {
     .match-container {
         grid-template-columns: 1fr;
     }
+}
+@media(max-width: 768px) {
+   .recent-match {
+       margin-top: 30px;
+   }
 }
 
 
