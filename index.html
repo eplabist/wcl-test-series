@@ -124,26 +124,46 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    perspective: 1500px;
 }
 
 .carousel {
-    display: flex;
+    position: relative;
     width: 100%;
     max-width: 1100px;
-    justify-content: space-between;
-    transition: transform 0.5s ease;
+    height: 350px;
 }
 
-}
 
 /* Card Styling */
    .card {
-    background-color: #ec3b83;   /* Pure pink */
-    padding: 28px 30px;          /* More breathing space */
-    border-radius: 16px;
-    box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+    position: absolute;
+    width: 320px;
+    transition: all 0.6s ease;
+    left: 50%;
+    transform-style: preserve-3d;
 }
 
+/* Center Card */
+.card.center {
+    transform: translateX(-50%) scale(1.1);
+    z-index: 3;
+    opacity: 1;
+}
+
+/* Left Card */
+.card.left {
+    transform: translateX(-140%) scale(0.9) rotateY(15deg);
+    z-index: 2;
+    opacity: 0.7;
+}
+
+/* Right Card */
+.card.right {
+    transform: translateX(40%) scale(0.9) rotateY(-15deg);
+    z-index: 2;
+    opacity: 0.7;
+}
 
 .card h2 {
     margin-bottom: 18px;
@@ -263,48 +283,48 @@ th {
     
 </head>
 <script>
-const carousel = document.querySelector('.carousel');
+const cards = document.querySelectorAll('.card');
+
+let positions = ['left', 'center', 'right'];
+
+function updatePositions() {
+    cards.forEach((card, index) => {
+        card.className = 'card ' + positions[index];
+    });
+}
+
+updatePositions();
+
+function rotateLeft() {
+    positions.push(positions.shift());
+    updatePositions();
+}
+
+function rotateRight() {
+    positions.unshift(positions.pop());
+    updatePositions();
+}
 
 let startX = 0;
 
-function rotateRight() {
-    const last = carousel.lastElementChild;
-    carousel.insertBefore(last, carousel.firstElementChild);
-}
-
-function rotateLeft() {
-    const first = carousel.firstElementChild;
-    carousel.appendChild(first);
-}
-
-// Mouse drag
-carousel.addEventListener('mousedown', (e) => {
+document.querySelector('.carousel').addEventListener('mousedown', (e) => {
     startX = e.clientX;
 });
 
-carousel.addEventListener('mouseup', (e) => {
+document.querySelector('.carousel').addEventListener('mouseup', (e) => {
     let diff = e.clientX - startX;
-
-    if (diff > 50) {
-        rotateRight();
-    } else if (diff < -50) {
-        rotateLeft();
-    }
+    if (diff > 50) rotateRight();
+    if (diff < -50) rotateLeft();
 });
 
-// Touch support
-carousel.addEventListener('touchstart', (e) => {
+document.querySelector('.carousel').addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
 });
 
-carousel.addEventListener('touchend', (e) => {
+document.querySelector('.carousel').addEventListener('touchend', (e) => {
     let diff = e.changedTouches[0].clientX - startX;
-
-    if (diff > 50) {
-        rotateRight();
-    } else if (diff < -50) {
-        rotateLeft();
-    }
+    if (diff > 50) rotateRight();
+    if (diff < -50) rotateLeft();
 });
 </script>
 
