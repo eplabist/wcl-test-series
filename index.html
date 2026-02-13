@@ -185,10 +185,11 @@ body {
 }
 
 .card li {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 50px 1fr 100px 100px;
     align-items: center;
     padding: 12px 0;
+    color: white;
 }
 .card li:not(:last-child) {
     border-bottom: 1px solid rgba(255,255,255,0.6);
@@ -389,13 +390,43 @@ document.addEventListener("DOMContentLoaded", function() {
     <!-- Top Bowlers -->
     <div class="card">
         <h2>Top 5 Bowlers</h2>
-        <ul>
-            <li><span class="rank"></span> Player Name<span class="stat">Overs</span><span class="stat">Wickets</span></li>
-            <li><span class="rank">1</span> Player Y <span class="stat">15 Wkts</span><span class="stat">15</span></li>
-            <li><span class="rank">2</span> Player Z <span class="stat">14 Wkts</span></li><span class="stat">12</span></li>
-            <li><span class="rank">3</span> Player M <span class="stat">13 Wkts</span></li><span class="stat">10</span></li>
-            <li><span class="rank">4</span> Player N <span class="stat">12 Wkts</span></li><span class="stat">9</span></li>
-        </ul>
+       <ul>
+    <li class="header-row">
+        <span></span>
+        <span>Player</span>
+        <span>Overs</span>
+        <span>Wickets</span>
+    </li>
+
+    <li>
+        <span class="rank">1</span>
+        <span>Player Y</span>
+        <span>12</span>
+        <span>15</span>
+    </li>
+
+    <li>
+        <span class="rank">2</span>
+        <span>Player Z</span>
+        <span>12</span>
+        <span>14</span>
+    </li>
+
+    <li>
+        <span class="rank">3</span>
+        <span>Player M</span>
+        <span>10</span>
+        <span>13</span>
+    </li>
+
+    <li>
+        <span class="rank">4</span>
+        <span>Player N</span>
+        <span>9</span>
+        <span>12</span>
+    </li>
+</ul>
+
     </div>
 
 </section>
