@@ -250,12 +250,29 @@ body {
     margin: 0;
 }
 
-.card li {
+.player-row {
     display: grid;
-    grid-template-columns: 50px 1fr 100px 100px;
+    grid-template-columns: 50px 60px 1fr 80px 80px;
     align-items: center;
     padding: 12px 0;
     color: white;
+}
+    .player-img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+}
+    .top-player {
+    width: 60px;
+    height: 60px;
+    border: 3px solid gold;
+}
+    .player-row span:nth-child(4),
+.player-row span:nth-child(5) {
+    text-align: right;
+}
 }
 .card li:not(:last-child) {
     border-bottom: 1px solid rgba(255,255,255,0.6);
@@ -494,10 +511,42 @@ document.addEventListener("DOMContentLoaded", function() {
         <h2>Top 5 Batters</h2>
         <ul>
             <li><span class="rank"></span> Player Name <span class="stat">Runs</span><span class="stat">Balls fcd</span></li>
-            <li><span class="rank">1</span> Player B <span class="stat">420 </span><span class="stat">892</span></li>
-            <li><span class="rank">2</span> Player C <span class="stat">398 </span><span class="stat">760</span></li>
-            <li><span class="rank">3</span> Player D <span class="stat">370 </span><span class="stat">654</span></li>
-            <li><span class="rank">4</span> Player E <span class="stat">355 </span><span class="stat">623</span></li>
+            <li class="player-row">
+    <span class="rank">1</span>
+
+    <img src="images/player1.jpg" class="player-img top-player">
+
+    <span class="player-name">Player B</span>
+    <span class="stat">420</span>
+    <span class="stat">892</span>
+</li>
+            <li class="player-row">
+    <span class="rank">2</span>
+
+    <img src="images/player2.jpg" class="player-img">
+
+    <span class="player-name">Player C</span>
+    <span class="stat">398</span>
+    <span class="stat">760</span>
+</li>
+            <li class="player-row">
+    <span class="rank">2</span>
+
+    <img src="images/player2.jpg" class="player-img">
+
+    <span class="player-name">Player C</span>
+    <span class="stat">398</span>
+    <span class="stat">760</span>
+</li>
+            <li class="player-row">
+    <span class="rank">2</span>
+
+    <img src="images/player2.jpg" class="player-img">
+
+    <span class="player-name">Player C</span>
+    <span class="stat">398</span>
+    <span class="stat">760</span>
+</li>
         </ul>
     </div>
 
