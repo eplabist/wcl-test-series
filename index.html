@@ -269,6 +269,9 @@ body {
     height: 60px;
     border: 3px solid gold;
 }
+    .top-player {
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+}
     .player-row span:nth-child(4),
 .player-row span:nth-child(5) {
     text-align: right;
@@ -387,7 +390,16 @@ th {
        margin-top: 30px;
    }
 }
+@media(max-width: 768px) {
+    .player-row {
+        grid-template-columns: 40px 45px 1fr 60px 60px;
+    }
 
+    .top-player {
+        width: 50px;
+        height: 50px;
+    }
+}
 
 </style>
     
